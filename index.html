@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>张冬冬的个人简历^_^</title>
     <link href="css/jquery.fullPage.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
     <style>
         body,html,header,section,div,ul,li,div,a,p,h1{ padding:0; margin:0; font-family:"微软雅黑"}
         li{ list-style:none;}
         a{ text-decoration:none;}
 
         .s1{ background: url("img/s1.jpg") center; }
-        .s1 img{ position:absolute; top: 50%; left: 50%; margin-left: -545px; margin-top: -240px; opacity: 0; transition: 0.8s 0.8s; }
-        .s1.active img{ opacity: 1 }
+        .s1 div{ text-align: center;margin-top:400px ;opacity: 0; transition: 0.8s 0.8s;font-size: 40px }
+        .s1.active div{ opacity: 1 }
         /*公共*/
         .section{ overflow: hidden  }
         .section .left{ position: absolute; top: 50%; margin-top: -200px; left: 5%; z-index: 2}
@@ -62,16 +67,17 @@
 
 
         /*头部导航*/
-        .hd{ position: absolute; left: 0; top: 0; z-index: 1;     background: rgba(0,0,0,0.8); color: white; width: 100%; height: 60px; }
-        .inner{ width: 980px; height: 60px; margin: 0 auto }
-        .logo{ float: left; text-decoration: none; margin: 16px 20px 0 0  }
-        .inner nav{ float:left; }
+        .hd{ position: absolute; left: 0; top: 0; z-index: 1;background:#ccc; color: white; width: 100%; height: 60px;opacity: 0.8 }
+       /* .inner{ width: 980px; height: 60px;margin:0 auto}*/
+        .logo{ float: left; text-decoration: none; margin: 16px 20px 0 0 ;}
+        .logo img{width:60px;height:60px;border-radius: 50%;position:absolute;left: 50px;top: 0}
+        .inner nav{position:absolute;right: 50px;top: 0 }
         .inner nav .menu li{ float: left; }
         .inner nav .menu li a{ display: block;  padding: 0 20px; line-height: 60px; cursor:pointer; color: #ffffff; }
         .inner nav .menu li a:hover,.inner nav .menu li.active a{ background: #fc0; color: #000;  }
 
 
-        @-webkit-keyframes move1 {
+ /*       @-webkit-keyframes move1 {
              0%{ -webkit-transform: translate(330px,-1000px); transform: translate(330px,-1000px) }
              20%{ -webkit-transform: translate(330px,0); transform: translate(330px,0) }
              40%{ -webkit-transform: translate(330px,-50px); transform: translate(330px,-50px) }
@@ -112,21 +118,21 @@
             40%{ transform: translate(-330px,-50px) }
             60%{ transform: translate(-330px,0px) }
             100%{ transform: translate(0,0) }
-        }
+        }*/
     </style>
 </head>
 <body>
     <!-- 头部导航开始 -->
     <header class="hd">
         <div class="inner">
-            <a class="logo"><img src="img/logo.png"></a>
+            <div class="logo"><img src="img/logo-cxd.png" ></div>
             <nav>
                 <ul class="menu">
                     <li data-menuanchor="page1" class="active"><a href="#page1">首页</a></li>
-                    <li data-menuanchor="page2"><a href="#page2">吉祥物语</a></li>
-                    <li data-menuanchor="page3"><a href="#page3">Chow-Lee</a></li>
-                    <li data-menuanchor="page4"><a href="#page4">北邦</a></li>
-                    <li data-menuanchor="page5"><a href="#page5">赵娜</a></li>
+                    <li data-menuanchor="page2"><a href="#page2">我的技能</a></li>
+                    <li data-menuanchor="page3"><a href="#page3">个人经历</a></li>
+                    <li data-menuanchor="page4"><a href="#page4">我的作品</a></li>
+                    <li data-menuanchor="page5"><a href="#page5">联系我</a></li>
                 </ul>
             </nav>
         </div>
@@ -137,7 +143,9 @@
     <div class="con">
 
         <div class="section s1 active">
-            <img src="img/wenzi.png">
+                <div>Welcome To My Personal Website,Here Is My Information And Work Show</div>
+                <div  style="color: white">苍天呐，简历怎么写哇<img src="img/52ae0a493dfae92e3c000005.GIF" style="width:80px;height: 80px" /></div>
+            <!--<img src="img/wenzi.png">-->
         </div>
 
         <!-- 第二页 -->
@@ -166,7 +174,7 @@
                 <p>价格：99元起<br>艺术家：吉祥物语</p>
                 <a>站酷主页</a>
             </div>
-            <div class="bg"><img src="img/sc2.png"></div>
+           <!-- <div class="bg"><img src="img/sc2.png"></div>-->
         </div>
 
         <!-- 第三页 -->
@@ -195,36 +203,147 @@
                 <p>价格：249元<br>艺术家：Chow-Lee</p>
                 <a>站酷主页</a>
             </div>
-            <div class="bg"><img src="img/sc3.png"></div>
+           <!-- <div class="bg"><img src="img/sc3.png"></div>-->
         </div>
 
         <!-- 第四页 -->
         <div class="section s4">
-            <div class="left">
-                <ul>
-                    <li>
-                        <img src="img/img7.png">
-                        <p>绽放2009<br>60*60cm</p>
-                        <a href="#"></a>
-                    </li>
-                    <li>
-                        <img src="img/img8.png">
-                        <p>绽放2010<br>60*60cm</p>
-                        <a href="#"></a>
-                    </li>
-                    <li>
-                        <img src="img/img9.png">
-                        <p>绽放2011<br>60*60cm</p>
-                        <a href="#"></a>
-                    </li>
-                </ul>
-            </div>
+
+
+            <section class="cd-horizontal-timeline">
+                <div class="timeline">
+                    <div class="events-wrapper">
+                        <div class="events">
+                            <ol>
+                                <li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
+                                <li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
+                                <li><a href="#0" data-date="20/04/2014">20 Mar</a></li>
+                                <li><a href="#0" data-date="20/05/2014">20 May</a></li>
+                                <li><a href="#0" data-date="09/07/2014">09 Jul</a></li>
+                                <li><a href="#0" data-date="30/08/2014">30 Aug</a></li>
+                                <li><a href="#0" data-date="15/09/2014">15 Sep</a></li>
+                                <li><a href="#0" data-date="01/11/2014">01 Nov</a></li>
+                                <li><a href="#0" data-date="10/12/2014">10 Dec</a></li>
+                                <li><a href="#0" data-date="19/01/2015">29 Jan</a></li>
+                                <li><a href="#0" data-date="03/03/2015">3 Mar</a></li>
+                            </ol>
+
+                            <span class="filling-line" aria-hidden="true"></span>
+                        </div> <!-- .events -->
+                    </div> <!-- .events-wrapper -->
+
+                    <ul class="cd-timeline-navigation">
+                        <li><a href="#0" class="prev inactive">Prev</a></li>
+                        <li><a href="#0" class="next">Next</a></li>
+                    </ul> <!-- .cd-timeline-navigation -->
+                </div> <!-- .timeline -->
+
+                <div class="events-content">
+                    <ol>
+                        <li class="selected" data-date="16/01/2014">
+                            <h2>Horizontal Timeline</h2>
+                            <em>January 16th, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="28/02/2014">
+                            <h2>Event title here</h2>
+                            <em>February 28th, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="20/04/2014">
+                            <h2>Event title here</h2>
+                            <em>March 20th, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="20/05/2014">
+                            <h2>Event title here</h2>
+                            <em>May 20th, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="09/07/2014">
+                            <h2>Event title here</h2>
+                            <em>July 9th, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="30/08/2014">
+                            <h2>Event title here</h2>
+                            <em>August 30th, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="15/09/2014">
+                            <h2>Event title here</h2>
+                            <em>September 15th, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="01/11/2014">
+                            <h2>Event title here</h2>
+                            <em>November 1st, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="10/12/2014">
+                            <h2>Event title here</h2>
+                            <em>December 10th, 2014</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="19/01/2015">
+                            <h2>Event title here</h2>
+                            <em>January 19th, 2015</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+
+                        <li data-date="03/03/2015">
+                            <h2>Event title here</h2>
+                            <em>March 3rd, 2015</em>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+                            </p>
+                        </li>
+                    </ol>
+                </div> <!-- .events-content -->
+            </section>
+
+            <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+            <script src="js/jquery.mobile.custom.min.js"></script>
+            <script src="js/main.js"></script>
+
+
+
+
             <div class="right">
                 <h1>绽放</h1>
                 <p>价格：269元<br>艺术家：北邦</p>
                 <a>站酷主页</a>
             </div>
-            <div class="bg"><img src="img/sc4.png"></div>
+         <!--   <div class="bg"><img src="img/sc4.png"></div>-->
         </div>
 
         <!-- 第五页 -->
@@ -253,7 +372,7 @@
                 <p>价格：249元<br>艺术家：赵娜</p>
                 <a>站酷主页</a>
             </div>
-            <div class="bg"><img src="img/sc5.png"></div>
+         <!--   <div class="bg"><img src="img/sc5.png"></div>-->
         </div>
     </div>
     <!-- 主体结束 -->

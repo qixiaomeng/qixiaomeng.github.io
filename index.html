@@ -11,7 +11,7 @@
 
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
     <style>
-        body,html,header,section,div,ul,li,div,a,p,h1{ padding:0; margin:0; font-family:"微软雅黑"}
+        body,html,header,section,div,ul,li,div,p,h1{ padding:0; margin:0; font-family:"微软雅黑"}
         li{ list-style:none;}
         a{ text-decoration:none;}
 
@@ -55,13 +55,12 @@
         .s4 .right{ opacity: 0; transition: 0.8s 0.8s}
         .s4.active .right{ opacity: 1 }
 
-        .s5{ background: url("img/s5.jpg") center; perspective: 500px }
+        .s5{  perspective: 500px }
         .s5 .left li{ -webkit-transform: translate3d(-1000px,-800px,-500px) rotateX(145deg); transform: translate3d(-1000px,-800px,-500px) rotateX(145deg) }
         .s5.active .left li:nth-child(1){ -webkit-transform: translate3d(0,0,0) rotateX(0deg); transform: translate3d(0,0,0) rotateX(0deg); transition-delay: 0.8s }
-        .s5.active .left li:nth-child(2){ -webkit-transform: translate3d(0,0,0) rotateX(0deg); transform: translate3d(0,0,0) rotateX(0deg); transition-delay: 1s }
-        .s5.active .left li:nth-child(3){ -webkit-transform: translate3d(0,0,0) rotateX(0deg); transform: translate3d(0,0,0) rotateX(0deg); transition-delay: 1.2s }
         .s5 .right{ opacity: 0; transition: 0.8s 1.8s}
         .s5.active .right{ opacity: 1 }
+        .s5 p{text-align:center; vertical-align:middle; display:table-cell;}
 
 
         /*头部导航*/
@@ -123,14 +122,18 @@
         #intro-icon{
             width:800px;height: 300px;margin:100px auto;position: relative;
         }
-        #intro-icon img{width:200px;height:200px;border-radius: 50%; background-size:100%;position: absolute;left: 50%;top: 50%;margin-left: -100px;margin-top: -100px}
-
+        #intro-icon img{width:200px;height:200px;border-radius: 50%; background-size:100%;position:
+                absolute;left: 50%;top: 50%;margin-left: -100px;margin-top: -100px;
+                transition:0.8s all ease}
+        #intro-icon a:hover{-webkit-transform:rotate(-360deg) ; -webkit-transition: all .4s ease-in-out;}
         #github{background:url(img/github.png)  no-repeat;
             background-size:100% 100%; text-indent:-999999px;width:100px;height: 100px ;display:inline-block;
             position: absolute;left: 0;top: 50%;margin-top:-50px}
         #email{background:url(img/email.png)  no-repeat;
             background-size:100% 100%; text-indent:-999999px;width:100px;height: 100px ;border-radius: 50%;
-            display:inline-block;position: absolute;right:0;top: 50%;margin-top:-50px}
+            display:inline-block;position: absolute;right:0;top: 50%;margin-top:-50px;
+            }
+        a, a:visited{    text-decoration: none; -webkit-transition: all .3s ease-in-out; }
 
         #intro-text{width:1600px;height:400px;margin: 0 auto;overflow: hidden}
         #intro-text .fl{float:left;height: 100%;width:800px;}
@@ -212,7 +215,7 @@
             </div>
         </div>
 
-       <!-- <img src="img/wenzi.png">-->
+        <!-- <img src="img/wenzi.png">-->
     </div>
 
     <!-- 第二页 -->
@@ -318,10 +321,11 @@
             <div class="events-content">
                 <ol>
                     <li class="selected" data-date="16/01/2014">
-                        <h2>Horizontal Timeline</h2>
-                        <em>January 16th, 2014</em>
+                        <h2>平安科技</h2>
+                        <em>January 16th, 2016</em>
                         <p>
-                            第一个单位
+                            2015年10月至2016年7月，就职于平安科技，工作期间，主要负责公司对外网站和内部业务系统的前端工作，
+                            期间也接触过nodejs的开发。因为个人和家庭的原因，在CVTE工作半年左右后离职。
                         </p>
                     </li>
 
@@ -329,7 +333,8 @@
                         <h2>Event title here</h2>
                         <em>February 28th, 2014</em>
                         <p>
-                            第二个单位
+                            爱生活，爱运动，爱互联网。有责任心和团队合作精神，热衷和关注前端开发，
+                            虽然技术和经验不足，但有一颗学习和进取的心。希望能进入互联网公司，提高自己的综合素质和知识技能，积累更多的经验。
                         </p>
                     </li>
 
@@ -337,7 +342,7 @@
                         <h2>Event title here</h2>
                         <em>March 20th, 2014</em>
                         <p>
-                            第三个单位
+                          不写了
                         </p>
                     </li>
 
@@ -345,7 +350,7 @@
                         <h2>Event title here</h2>
                         <em>May 20th, 2014</em>
                         <p>
-                            第四个单位
+                           不写了
                         </p>
                     </li>
 
@@ -372,23 +377,14 @@
         <div class="left">
             <ul>
                 <li>
-                    <p>下载word版本简历</p>
-                    <img src="img/4.jpg">
-
+                    <p>点我下载word版本简历</p>
 
                 </li>
-                <li>
-                    <!--<img src="img/img11.png">-->
-                   <!-- <p>惊蛰<br>50*60cm</p>-->
-
-                </li>
-                <li>
-                   <!-- <img src="img/img12.png">-->
-                    <!--<p>恬静<br>50*60cm</p>-->
-
-                </li>
+                感谢您花时间阅读我的简历，期待能有机会和您共事
             </ul>
+
         </div>
+
         <div class="right">
             <h1>联</br>系</br>我</br>吧</br></h1>
 

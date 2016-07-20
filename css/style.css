@@ -17,10 +17,9 @@ body {
   color: #383838;
   background-color: #f8f8f8;
 }
-
 a {
-  color: #7b9d6f;
-  text-decoration: none;
+  color: #F08080;
+
 }
 
 /* -------------------------------- 
@@ -54,7 +53,7 @@ Main Components
 .cd-horizontal-timeline .events-wrapper {
   position: relative;
   height: 100%;
-  margin:200px 140px;
+  margin:180px 140px;
  /* overflow: hidden;*/
 }
 .cd-horizontal-timeline .events-wrapper::after, .cd-horizontal-timeline .events-wrapper::before {
@@ -164,7 +163,7 @@ Main Components
 }
 @media only screen and (min-width: 1100px) {
   .cd-horizontal-timeline {
-    margin: 6em auto;
+    margin: 1em auto;
   }
   .cd-horizontal-timeline::before {
     /* never visible - this is used in jQuery to check the current MQ */
@@ -326,7 +325,7 @@ Main Components
     font-size: 2rem;
   }
   .cd-horizontal-timeline .events-content p {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 }
 

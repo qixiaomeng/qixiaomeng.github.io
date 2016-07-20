@@ -54,8 +54,8 @@ Main Components
 .cd-horizontal-timeline .events-wrapper {
   position: relative;
   height: 100%;
-  margin: 0 40px;
-  overflow: hidden;
+  margin:200px 140px;
+ /* overflow: hidden;*/
 }
 .cd-horizontal-timeline .events-wrapper::after, .cd-horizontal-timeline .events-wrapper::before {
   /* these are used to create a shadow effect at the sides of the timeline */
@@ -320,7 +320,7 @@ Main Components
 }
 @media only screen and (min-width: 768px) {
   .cd-horizontal-timeline .events-content h2 {
-    font-size: 7rem;
+    font-size: 2rem;
   }
   .cd-horizontal-timeline .events-content em {
     font-size: 2rem;

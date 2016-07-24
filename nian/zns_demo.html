@@ -1,0 +1,80 @@
+<!--
+智能社© - http://www.zhinengshe.com/
+
+微博：@北京智能社
+微信：zhi_neng_she
+
+最具深度的前端开发培训机构 HTML+CSS/JS/HTML5
+-->
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript简易日历 - 智能社 - www.zhinengshe.com</title>
+<link href="zns_style.css" rel="stylesheet" type="text/css" />
+<script>
+window.onload = function() {
+	var arr = [
+		"元旦",
+		"情人节",
+		"妇女节",
+		"愚人节",
+		"劳动节",
+		"儿童节",
+		"建党节",
+		"建军节",
+		"教师节",
+		"国庆节",
+		"光棍节",
+		"圣诞节",
+		];
+	var oDiv = document.getElementById("tab");
+	var oUl = oDiv.getElementsByTagName("ul")[0];
+	var aLi = oUl.getElementsByTagName("li");
+	var oContent = document.getElementById("div1");
+	
+	for (var i = 0; i < aLi.length; i++) {
+		aLi[i].index = i;
+		aLi[i].onmouseover = function() {
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].className = "";
+			}
+			this.className = "active";
+			oContent.innerHTML = "<h2>"+ (this.index + 1) +"月活动</h2><p>"+ arr[this.index] +"</p>";
+		};
+	}
+	
+};
+</script>
+</head>
+
+<body>
+
+<div id="tab" class="calendar">
+
+    <ul>
+        <li class="active"><h2>1</h2><p>JAN</p></li>
+        <li><h2>2</h2><p>FER</p></li>
+        <li><h2>3</h2><p>MAR</p></li>
+        <li><h2>4</h2><p>APR</p></li>
+        <li><h2>5</h2><p>MAY</p></li>
+        <li><h2>6</h2><p>JUN</p></li>
+        <li><h2>7</h2><p>JUL</p></li>
+        <li><h2>8</h2><p>AUG</p></li>
+        <li><h2>9</h2><p>SEP</p></li>
+        <li><h2>10</h2><p>OCT</p></li>
+        <li><h2>11</h2><p>NOV</p></li>
+        <li><h2>12</h2><p>DEC</p></li>
+    </ul>
+    
+    <div id="div1" class="text">
+        <h2>1月活动</h2>
+        <p>快过年了，大家可以商量着去哪玩吧～</p>
+    </div>
+
+</div>
+
+</body>
+</html>

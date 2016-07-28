@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>聚划算</title>
+    <style>
+        *{margin:0;padding:0;list-style:none;}
+        html{font-size:50px;}
+
+        .page{width:6.4rem; margin:0 auto; background:#f6f6f6;}
+        .page .title { height:1rem; position: relative}
+        .page .title .btn_back{ margin:0.24rem 0 0 0.24rem; display:inline-block;width:1.22rem; height:0.58rem;
+            background:url(img/btn_back.png) no-repeat; background-size:100% 100%; text-indent:-999999px;}
+        .title img{width:1.48rem;position: absolute;margin-top:-0.2rem;margin-left: -0.74rem;top:50%;left: 50%}
+        .page .banner{ position:relative; height:2.98rem; background:#ccc;}
+        .page .banner ul{ position:absolute;left:0;top:0;width:2000000px; height:2.68rem;overflow:hidden;}
+        .page .banner ul li{float:left;width:6.4rem; height:100%;}
+        .page .banner ul li img{width:100%;}
+
+        .page .banner ol{ position:absolute;left:50%;bottom:0; margin-left:-0.46rem;width:0.9rem;}
+        .page .banner ol li{float:left;width:0.1rem; height:0.1rem; border-radius:50%; margin-right:0.1rem; background:#a9a9a9;}
+        .page .banner ol li:nth-last-child(1){ margin:0;}
+        .page .banner ol li.active{ background:#ff4300;}
+
+        .banner ol{width:0.9rem;position: absolute;left:50%;margin-left:-0.46rem;bottom:0;;}
+        .banner ol li{ width:0.1rem;height:0.1rem;border-radius: 50%;background: #ccc;float:left;margin-right:0.1rem}
+        .banner ol li.active{background: red}
+
+        #nav{width:6.4rem;height: 3.4rem;margin:0 auto;background: #fff}
+        .nav-t{width: 100%;height:50%;}
+        .nav-t li{width:1.6rem;float:left}
+        .nav-t li div{width:0.8rem;margin-top: 0.41rem}
+        #nav-l li div{width:0.8rem;margin-top:0.08rem}
+
+        .nav-t li div img{width:100%}
+
+
+        .nav-t li p{text-align: center;
+            font-size:0.24rem;color:#999999
+        }
+
+        .nav-t1{margin-left: 0.5rem;}
+        .nav-t2{margin-left:0.4rem;}
+        .nav-t3{margin-left:0.4rem;}
+        .nav-t4{margin-left:0.3rem;}
+
+
+        #box{width:6.4rem; margin:0 auto; background:#ffffff;}
+        #chart{width: 6rem;margin:0 auto}
+        #chart .chart-title{width: 100%;height:0.96rem;border-bottom:0.04rem solid #ccc }
+        #chart .chart-title span{font-size:0.3rem;color: rgb(51,51,51);line-height: 0.3rem;display: inline-block}
+        .chart-title-l{border-left:0.04rem solid red;margin-top:0.44rem;font-family:"方正兰亭黑简体";
+            font-size:0.28rem;color:#333333}
+        .chart-title-l{margin-right: 0.2rem}
+        #chart ul{width: 100%;margin-top:0.3rem}
+        #chart ul li{width: 100%;height:1.2rem;background: pink;margin-top: 0.2rem}
+        .chart-l{width:0.6rem;height:1.2rem;float:left;background: #e00202;font-family: Arial;
+            font-size:0.48rem;font-weight:bold;color:#ffffff;line-height:1.2rem;text-align:center; }
+        .chart-l-2{background: #ff4800}
+        .chart-l-3{background: #ff7300}
+        .chart-l-4{background: #ff9d00}
+        .chart-l-5{background: #ffa800}
+        .chart-l-6{background: #ff9d00}
+        .chart-l-7{background: #ffba00}
+        .chart-l-8{background: #ffd000}
+        .chart-l-9{background: #ffd719}
+        .chart-l-10{background: #ffe152}
+
+
+        .chart-c{width:1.8rem;height:1.2rem;float:left;}
+        .chart-c img{width:100%}
+        .chart-r{width:3.6rem;height:1.2rem;float:left;background: #f4f4f4;position: relative}
+        .chart-r p{position:relative;top:0.28rem;left: 0.25rem;
+            font-family:"微软雅黑";
+            font-size:0.24rem;color:#999999;
+        }
+        .discount{color: #c7223d;}
+        .price{text-decoration:line-through;}
+        .price-new{
+            position: absolute;top:0.4rem;left:2.5rem;
+            font-family:"微软雅黑";
+            font-size:0.32rem;color:#d51938;}
+        .price-new-7{
+            position: absolute;top:0.40rem;left:2.1rem;
+            font-family:"微软雅黑";
+            font-size:0.32rem;color:#d51938;}
+        .price-new-5,.price-new-6{
+            position: absolute;top:0.4rem;left:2.20rem;
+            font-family:"微软雅黑";
+            font-size:0.32rem;color:#d51938;}
+
+        .chart-r img{
+            position: absolute;top:0.5rem;left:3.27rem;width:0.18rem
+            }
+
+        .more{width:6rem;margin:0 auto;margin-top:0.2rem ;line-height: 0.8rem}
+        .more-one{height:0.8rem;width: 100%;background: #ccc;text-align: center;font-size: 0.3rem;}
+
+        .commodity-group{;height: 3.54rem;margin:0.2rem 0;}
+        .commodity-group .left{width:25%;height: 3.54rem;background:red;float: left}
+        .commodity-group .left img{width:100%;height: 100%}
+        .commodity-group .right{width:75%;float: right}
+        .commodity-group ul li{width:1.5rem;height:0.88rem;float:left;
+            border: 0.01rem solid #ccc;box-sizing:border-box;
+            line-height:0.88rem;text-align:center;
+            font-family:"微软雅黑";
+            font-size:0.28rem;
+            color: #adadad;
+        }
+        #more-right .color{color:#dd4768 }
+
+        .app{width: 6rem;margin:0 auto;font-size:0;padding: 0.43rem 0 0.17rem 0}
+        .app img{width:2rem}
+
+        #footer{width: 6.4rem;height:2.18rem;margin:0 auto; }
+        #footer .foot1{width: 100%;height: 0.9rem;background: #f8f8f8}
+        #footer .foot2{width: 100%;height: 1.28rem;background: #eeeeee;}
+        .foot1{font-size: 0.28rem;line-height: 0.8rem;color: #333333;position: relative}
+        .foot1 span{position: absolute;right:0.64rem;}
+        .foot1 img{position: absolute;right:0.25rem;top:0.36rem;width:0.19rem}
+
+        .foot2 p{text-align: center;color:#999999;font-size: 0.22rem;line-height: 0.3rem}
+        .foot2 p a{font-size: 0.28rem;color: #333333;font-family:"微软雅黑";}
+        .size{padding-top: 0.4rem}
+    </style>
+
+
+    <script>
+        window.onresize = function(){
+
+            /*
+             标准字体大小     新的字体？
+             ----------- =  -----------
+             标准设备的宽度   新的设备的宽度
+
+             */
+
+            document.documentElement.style.fontSize = 50/320*document.documentElement.clientWidth + "px";
+
+        };
+    </script>
+</head>
+<body>
+<div class="page">
+    <div class="title">
+        <a class="btn_back" href="javascript:;">返回</a>
+        <img src="img/11.png">
+    </div>
+    <div class="banner">
+        <ul>
+
+
+            <li><img src="img/pic1.png" ></li>
+
+
+
+        </ul>
+        <ol>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</div>
+<div id="nav">
+    <ul class="nav-t">
+        <li >
+            <div class="nav-t1">
+                <img src="img/intro_22.png" >
+                <p>商品</p>
+            </div>
+        </li>
+        <li>
+            <div class="nav-t2">
+                <img src="img/intro_24.png" >
+                <p>生活</p>
+            </div>
+        </li>
+        <li >
+            <div class="nav-t3">
+                <img src="img/intro_26.png" >
+                <p>品牌</p>
+            </div>
+        </li>
+        <li >
+            <div class="nav-t4">
+                <img src="img/intro_28.png" >
+                <p>聚宝盆</p>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="nav-t" id="nav-l">
+        <li >
+            <div class="nav-t1">
+                <img src="img/intro_37.png" >
+                <p>聚名品</p>
+            </div>
+        </li>
+        <li >
+            <div class="nav-t2">
+                <img src="img/intro_39.png" >
+                <p>聚家装</p>
+            </div>
+        </li>
+        <li >
+            <div class="nav-t3">
+                <img src="img/intro_41.png" >
+                <p>聚透</p>
+            </div>
+        </li>
+        <li >
+            <div class="nav-t4">
+                <img src="img/intro_43.png" >
+                <p>客户端</p>
+            </div>
+        </li>
+
+
+
+    </ul>
+</div>
+<div id="box">
+    <div id="chart">
+        <div class="chart-title">
+            <span class="chart-title-l">聚划算热卖排行</span>
+            <span class="chart-title-r">TOP10</span>
+        </div>
+        <ul>
+            <li>
+                <div class="chart-l">1</div>
+                <div class="chart-c"><img src="img/intro_18.png"   /></div>
+                <div class="chart-r">
+                   <p >已售68423</p>
+                    <p><span class="discount">2.3</span>折&nbsp￥<span class="price">299</span>
+                    </p>
+                    <span class="price-new">￥51</span>
+                    <img src="img/a.png">
+                </div>
+
+            </li>
+            <li>
+                <div class="chart-l chart-l-2">2</div>
+                <div class="chart-c"><img src="img/intro_21.png"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">2.3</span>折&nbsp￥<span class="price">299</span>
+                    </p>
+                    <span class="price-new">￥51</span>
+                    <img src="img/a.png">
+                </div>
+
+            </li>
+            <li>
+                <div class="chart-l chart-l-3">3</div>
+                <div class="chart-c"><img src="img/24.png"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">2.3</span>折&nbsp￥<span class="price">99</span>
+                    </p>
+                    <span class="price-new">￥89</span>
+                    <img src="img/a.png">
+                </div>
+            </li>
+            <li>
+                <div class="chart-l chart-l-4">4</div>
+                <div class="chart-c"><img src="img/25.png"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">2.3</span>折&nbsp￥<span class="price">288</span>
+                    </p>
+                    <span class="price-new">￥88</span>
+                    <img src="img/a.png">
+                </div>
+            </li>
+            <li>
+                <div class="chart-l chart-l-5">5</div>
+                <div class="chart-c"><img src="img/intro_31.png"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">2.3</span>折&nbsp￥<span class="price">299</span>
+                    </p>
+                    <span class="price-new-5">￥199</span>
+                    <img src="img/a.png">
+                </div>
+            </li>
+            <li>
+                <div class="chart-l chart-l-6">6</div>
+                <div class="chart-c"><img src="img/intro_36.png"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">1.7</span>折&nbsp￥<span class="price">899</span>
+                    </p>
+                    <span class="price-new-6">￥588</span>
+                    <img src="img/a.png">
+                </div>
+            </li>
+            <li>
+                <div class="chart-l chart-l-7">7</div>
+                <div class="chart-c"><img src="img/intro_18.png"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">6.3</span>折&nbsp￥<span class="price">7665</span>
+                    </p>
+                    <span class="price-new-7">￥4599</span>
+                    <img src="img/a.png">
+                </div>
+            </li>
+            <li>
+                <div class="chart-l chart-l-8">8</div>
+                <div class="chart-c"><img src="img/28.jpg"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">2.3</span>折&nbsp￥<span class="price">299</span>
+                    </p>
+                    <span class="price-new">￥51</span>
+                    <img src="img/a.png">
+                </div>
+            </li>
+            <li>
+                <div class="chart-l chart-l-9">9</div>
+                <div class="chart-c"><img src="img/intro_44.png"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">2.3</span>折&nbsp￥<span class="price">299</span>
+                    </p>
+                    <span class="price-new">￥51</span>
+                    <img src="img/a.png">
+                </div>
+            </li>
+            <li>
+                <div class="chart-l chart-l-10">10</div>
+                <div class="chart-c"><img src="img/intro_46.png"   /></div>
+                <div class="chart-r">
+                    <p >已售68423</p>
+                    <p><span class="discount">2.3</span>折&nbsp￥<span class="price">2999</span>
+                    </p>
+                    <span class="price-new">￥9</span>
+                    <img src="img/a.png">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="more" id="more-right">
+        <div class="more-one">更多划算，逛起来</div>
+        <div class="commodity-group">
+            <div  class="left">
+                <img src="img/intro_27.png">
+            </div>
+            <ul class="right" >
+                <li class="color">服饰</li>
+                <li>配饰</li>
+                <li>美妆</li>
+                <li>鞋包</li>
+                <li>食品</li>
+                <li class="color">家居</li>
+                <li>运动</li>
+                <li class="color">电器</li>
+                <li>百货</li>
+                <li>母婴</li>
+                <li>数码</li>
+                <li>更多</li>
+
+            </ul>
+        </div>
+
+        <div class="more-one">更多划算，逛起来</div>
+        <div class="commodity-group">
+            <div  class="left">
+                <img src="img/intro_35.png">
+            </div>
+            <ul class="right">
+                <li class="color">美食</li>
+                <li>教育</li>
+                <li>酒店</li>
+                <li>电影</li>
+                <li>生活服务</li>
+                <li class="color">卡券</li>
+                <li>摄影</li>
+                <li class="color">粮油生鲜</li>
+                <li>门票</li>
+                <li>休闲娱乐</li>
+
+
+            </ul>
+        </div>
+
+        <div class="more-one">更多划算，逛起来</div>
+        <div class="commodity-group">
+            <div  class="left">
+                <img src="img/intro_40.png">
+            </div>
+            <ul class="right">
+                <li>七匹狼</li>
+                <li class="color">粉红女...</li>
+                <li>卓诗尼</li>
+                <li class="color">收纳博士</li>
+                <li>惠氏</li>
+                <li>夏乐</li>
+                <li>帕克伦</li>
+                <li>古今</li>
+                <li class="color">九牧</li>
+                <li>诺奥</li>
+                <li>红豆</li>
+                <li>曼秀雷敦</li>
+
+            </ul>
+        </div>
+        <div class="more-one">品牌折扣，逛起来</div>
+    </div>
+    <div class="app">
+        <img src="img/intro_64.png"/>
+        <img src="img/intro_65.png"/>
+        <img src="img/intro_66.png"/>
+    </div>
+
+</div>
+<div id="footer">
+    <div class="foot1">
+        <a>登录</a><a> 注册</a>
+        <span>TOP</span>
+        <img src="img/TOP.png">
+    </div>
+    <div class="foot2">
+        <p class="size"><a>标准版</a>&nbsp<a>电脑版</a></p>
+        <p>2013 浙B2-20080224 &nbsp服务中心</p>
+    </div>
+    <div></div>
+</div>
+
+</body>

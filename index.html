@@ -1,0 +1,483 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>张冬冬的个人简历^_^</title>
+    <link href="css/jquery.fullPage.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="css/style2.css"> <!-- Resource style -->
+    <link rel="stylesheet" type="text/css" href="css/jq22.css" />
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <script src="js/modernizr.custom.js"></script>
+
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <style>
+        body,html,header,section,div,ul,li,div,p,h1{ padding:0; margin:0; font-family:"微软雅黑"}
+        li{ list-style:none;}
+        a{ }
+
+
+        .s1 div{ opacity: 0; transition: 0.8s 0.8s;}
+        .s1.active div{ opacity: 1 }
+        /*公共*/
+        .section{ overflow: hidden  }
+        .section .left{ position: absolute; top: 50%; margin-top: -200px; left: 5%; z-index: 2}
+        .section .left li{ float: left; margin-right: 20px; transition: 0.8s; }
+        /* .section .left li p{ margin: 20px 0; font-size: 18px; color:#333 }*/
+        /* .section .left li a{ width:98px; height:36px; display:block;}*/
+        .section .right{ position: absolute; right: 5%;border-right:2px solid #000000; padding-right: 10px; text-align: right; top: 15%;z-index: 3; transition: 0.8s }
+        .section .right h1{ font-size:34px; color:#333; font-weight:100;}
+        .section .right p{ font-size:18px; color:#333; line-height:1.5em;margin-top:20px; margin-bottom:10px; }
+        .section .right a{ color:#333;  text-decoration:underline; cursor: pointer }
+        .section .right a:hover{ text-decoration:none;}
+        .section .bg{ position: absolute; bottom: 0; right: 0; z-index: 1 }
+
+
+
+
+        .s2 .left li{ -webkit-transform: translateY(1000px); transform: translateY(1000px); }
+        .s2 .left li:nth-child(1){ transition-delay: 0.8s }
+        .s2 .left li:nth-child(2){ transition-delay: 0.9s }
+        .s2 .left li:nth-child(3){ transition-delay: 1s }
+        .s2 .left li:nth-child(4){ transition-delay: 1.2s }
+        .s2.active .left li{ -webkit-transform: translateY(0); transform: translateY(0); }
+        .s2 .right{ -webkit-transform: translateY(-500px);  transform: translateY(-500px); transition-delay: 1.2s}
+        .s2.active .right{ -webkit-transform: translateY(0); transform: translateY(0);}
+
+
+        .s3 .left li{ transition-delay: 0.8s }
+        .s3 .left li:nth-child(2){ -webkit-transform: translateX(-279px); transform: translateX(-279px) }
+        .s3 .left li:nth-child(3){ -webkit-transform: translateX(-558px); transform: translateX(-558px) }
+        .s3.active .left li{ -webkit-transform: translateX(0); transform: translateX(0) }
+        .s3 .right{ -webkit-transform: translateX(500px); transform: translateX(500px); transition-delay: .8s}
+        .s3.active .right{ -webkit-transform: translateX(0); transform: translateX(0); }
+
+
+        .s4 .right{ opacity: 0; transition: 0.8s 0.8s}
+        .s4.active .right{ opacity: 1 }
+
+        
+        .s5 .left li{ -webkit-transform: translate3d(-1000px,-800px,-500px) rotateX(145deg); transform: translate3d(-1000px,-800px,-500px) rotateX(145deg) }
+        .s5.active .left li:nth-child(1){ -webkit-transform: translate3d(0,0,0) rotateX(0deg); transform: translate3d(0,0,0) rotateX(0deg); transition-delay: 0.8s }
+        .s5 .right{ opacity: 0; transition: 0.8s 1.8s}
+        .s5.active .right{ opacity: 1 }
+        .s5 p{text-align:center; vertical-align:middle; display:table-cell;}
+
+
+        /*头部导航*/
+        .hd{ position: absolute; left: 0; top: 0; z-index: 1;background:#F31244; color: white; width: 100%; height: 60px;opacity: 0.8 }
+        /* .inner{ width: 980px; height: 60px;margin:0 auto}*/
+        .logo{ float: left; text-decoration: none;width: 350px;height: 60px}
+        .logo p{
+        display: block;
+        padding: 0 20px;
+        line-height: 60px;
+        cursor: pointer;
+        color: #ffffff;
+        }
+        .logo img{width:60px;height:60px;border-radius: 50%;position:absolute;left: 50px;top: 0}
+        .logo img:hover{-webkit-box-shadow:0 0 0 10px yellow; -webkit-transition: all .9s ease-in-out; }
+        .inner nav{position:absolute;right: 50px;top: 0 ; }
+        .inner nav .menu li{ float: left; }
+        .inner nav .menu li a{ display: block;  padding: 0 20px; line-height: 60px; cursor:pointer; color: #ffffff; }
+        .inner nav .menu li a:hover,.inner nav .menu li.active a{ background: #fc0; color: #000;  }
+
+
+        @-webkit-keyframes move1 {
+            0%{ -webkit-transform: translate(330px,-1000px); transform: translate(330px,-1000px) }
+            20%{ -webkit-transform: translate(330px,0); transform: translate(330px,0) }
+            40%{ -webkit-transform: translate(330px,-50px); transform: translate(330px,-50px) }
+            60%{ -webkit-transform: translate(330px,0px); transform: translate(330px,0px) }
+            100%{ -webkit-transform: translate(0,0); transform: translate(0,0) }
+        }
+        @-webkit-keyframes move2 {
+            0%{ -webkit-transform: translate(0,-1000px); transform: translate(0,-1000px) }
+            20%{ -webkit-transform: translate(0,0); transform: translate(0,0) }
+            40%{ -webkit-transform: translate(0,-50px); transform: translate(0,-50px) }
+            60%{ -webkit-transform: translate(0,0px); transform: translate(0,0px) }
+            100%{ -webkit-transform: translate(0,0) ; transform: translate(0,0)}
+        }
+        @-webkit-keyframes move3 {
+            0%{ -webkit-transform: translate(-330px,-1000px); transform: translate(-330px,-1000px) }
+            20%{ -webkit-transform: translate(-330px,0); transform: translate(-330px,0) }
+            40%{ -webkit-transform: translate(-330px,-50px); transform: translate(-330px,-50px) }
+            60%{ -webkit-transform: translate(-330px,0px); transform: translate(-330px,0px) }
+            100%{ -webkit-transform: translate(0,0); transform: translate(0,0) }
+        }
+        @keyframes move1 {
+            0%{ transform: translate(330px,-1000px) }
+            20%{ transform: translate(330px,0) }
+            40%{ transform: translate(330px,-50px) }
+            60%{ transform: translate(330px,0px) }
+            100%{ transform: translate(0,0) }
+        }
+        @keyframes move2 {
+            0%{ transform: translate(0,-1000px) }
+            20%{ transform: translate(0,0) }
+            40%{ transform: translate(0,-50px) }
+            60%{ transform: translate(0,0px) }
+            100%{ transform: translate(0,0) }
+        }
+        @keyframes move3 {
+            0%{ transform: translate(-330px,-1000px) }
+            20%{ transform: translate(-330px,0) }
+            40%{ transform: translate(-330px,-50px) }
+            60%{ transform: translate(-330px,0px) }
+            100%{ transform: translate(0,0) }
+        }
+
+
+        .div1{width:100%;height:400px;margin: 0 auto;position: relative}
+        #intro-icon{
+            width:800px;height: 300px;margin:100px auto;position: relative;
+        }
+        #intro-icon img{width:200px;height:200px;border-radius: 50%; background-size:100%;position:
+                absolute;left: 50%;top: 50%;margin-left: -100px;margin-top: -100px;
+
+                transition:0.8s all ease}
+        #intro-icon a:hover{-webkit-transform:rotate(-360deg) ; -webkit-transition: all .4s ease-in-out;}
+        #github{background:url(img/github.png)  no-repeat;
+            background-size:100% 100%; text-indent:-999999px;width:100px;height: 100px ;display:inline-block;
+            position: absolute;left: 0;top: 50%;margin-top:-50px}
+        #email{background:url(img/email.png)  no-repeat;
+            background-size:100% 100%; text-indent:-999999px;width:100px;height: 100px ;border-radius: 50%;
+            display:inline-block;position: absolute;right:0;top: 50%;margin-top:-50px;
+            }
+        a, a:visited{    text-decoration: none; -webkit-transition: all .3s ease-in-out; }
+
+        #intro-text{width:1600px;height:400px;margin: 0 auto;overflow: hidden}
+        #intro-text .fl{float:left;height: 100%;width:800px;}
+        #intro-text .fr{float: right;height: 100%;width:800px;}
+
+
+        #intro-text ul li{line-height: 15px;text-align: center;
+            font-family:' 微软雅黑';
+            display:inline-block;
+            /* -webkit-margin-before: 1em;
+             -webkit-margin-after: 1em;
+             -webkit-margin-start: 0px;
+             -webkit-margin-end: 0px;
+             -webkit-padding-start: 90px;*/
+
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-right:20px;
+            margin-left:360px;
+        }
+        .fr p{line-height:36.5px; font-family:' 微软雅黑';
+            display:inline-block;}
+
+        .col-md-4{width: 362px;height: 286px}
+
+        .box-area {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-weight: 400;
+            background: #F5F5F5;
+            border-bottom: 10px solid #E2E2E2;
+            /* border-radius: 0 0 15px 15px; */
+            box-shadow: 0px 1px 3px #A9A9A9;}
+        /* border: 1px solid #fff; */
+
+        h3 {
+            color: #333;
+            line-height: 1.4;
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .box-area-icon i {
+            font-size: 40px;
+            color: #F31244;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .s5-text{text-align: center;font-size:32px;position: absolute;top:20%;left: 30%;}
+    </style>
+</head>
+<body>
+<!-- 头部导航开始 -->
+<header class="hd">
+    <div class="inner">
+            <div class="logo"><img src="img/logo-cxd.png" >
+                <p>web开发工程师</p>
+            </div>
+
+            <nav>
+            <ul class="menu">
+                <li data-menuanchor="page1" class="active"><a href="#page1">首页</a></li>
+                <li data-menuanchor="page2"><a href="#page2">专业技能</a></li>
+                <li data-menuanchor="page3"><a href="#page3">我的作品</a></li>
+                <li data-menuanchor="page4"><a href="#page4">个人经历</a></li>
+                <li data-menuanchor="page5"><a href="#page5">联系我</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- 头部导航结束 -->
+
+<!-- 主体开始 -->
+<div class="con">
+
+    <div class="section s1 active" >
+        <div class="div1">
+            <div id="intro-icon">
+                <a  href="http://github.com/qixiaomeng"  target="_blank" id="github" hideFocus="true">GitHub</a>
+
+                <img id="myPhoto" src="img/4.jpg">
+                <a c href="mailto:wqhddyy@163.com" id="email" hideFocus="true">E-mail</a>
+            </div>
+            <div id="intro-text">
+                <ul class="fl">
+                    <li><span>姓&nbsp名</span> | 张冬冬 </li>
+                    <li><span>年&nbsp龄</span> | 27岁</li>
+                    <li><span>学&nbsp历</span> | 本科</li>
+                    <li><span>手&nbsp机</span> | 15221458574</li>
+                    <li><span>邮&nbsp箱</span> | <a href="mailto:919931896@qq.com"> 919931896@163.com </a>
+
+                    <li><span>坐&nbsp标</span> | 上海</li>
+                    <li><span>GitHub</span> | <a href="http://github.com/qixiaomeng"   target="_blank" hideFocus="true">点击进入</a> </li>
+
+                </ul>
+                <div class="fr">
+                    <p>热爱前端，喜欢用最扎实的代码技术做出效果上最炫，代码上最合理的页面。</p>
+                    <p>熟悉html,css，能够兼容主流各种浏览器，比如ie6-10, chrome,firefox,opera.熟悉html5,css3</p>
+                    <p>熟悉js dom, event,ajax, jsonp。</p>
+                    <p>熟悉jquery api，能够编写最基本的动态交互效果，并擅长用jquery插件来封装日常的开发组件，能够保证代码的性能或可难搞性</p>
+                    <p>熟悉backbone,angularjs等框架，熟练使用seajs, requirejs模块加载。</p>
+                    <p>了解svn,git等版本控制工具。</p>
+                    <p>能够熟练使用firebug,chrome调试工作调试代码，并能够进一步进行优化。</p>
+                    <p>能够熟练使用photoshop, sublime text, webstorm等工具进行前端页面手工式的开发。</p>
+                    <p>目前正在关注nodejs等</p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- <img src="img/wenzi.png">-->
+    </div>
+
+    <!-- 第二页 -->
+    <div class="section s2">
+        <div class="left">
+            <ul>
+                <li>
+                    <div class="col-md-4">
+                        <div class="box-area" >
+                            <div class="box-area-icon">
+                                <i class="fa fa-heart"></i>
+                            </div>
+                            <h3>HTML</h3>
+                            <div class="box-area-text">
+                                标签闭合、标签小写、不乱嵌套、提高搜索机器人搜索几率、使用外链css和js脚本、结构行为表现的分离、
+                                文件下载与页面速度更快、内容能被更多的用户所访问、内容能被更广泛的设备所访问、更少的代码和组件，容易维护、改版方便。
+</div>
+                        </div>
+                    </div>
+
+
+                </li>
+                <li>
+                    <div class="col-md-4">
+                        <div class="box-area" >
+                            <div class="box-area-icon">
+                                <i class="fa fa-fire"></i>
+                            </div>
+                            <h3>CSS</h3>
+                            <div class="box-area-text"> 命名规范 尽量追求这三点</br>
+                                1能够兼容各种主流浏览器</br>2扩展性好</br>3精简</br></div>
+                        </div>
+                    </div>
+
+
+                </li>
+                <li>
+                    <div class="col-md-4">
+                        <div class="box-area" >
+                            <div class="box-area-icon">
+                                <i class="fa fa-cube"></i>
+                            </div>
+                            <h3>JavaScript</h3>
+                            <div class="box-area-text">能够编写基本的js原生代码,dom尤为重要。js原生是基础，框架永远会更新，但万变不离其中</div>
+                        </div>
+                    </div>
+
+
+                </li>
+                <li>
+                    <div class="col-md-4">
+                        <div class="box-area" >
+                            <div class="box-area-icon">
+                                <i class="fa fa-pie-chart"></i>
+                            </div>
+                            <h3>Ajax</h3>
+                            <div class="box-area-text">一句话描述他就是局部刷新，原生Ajax</div>
+                        </div>
+                    </div>
+
+
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <h1>专</br>业</br>技</br>能</br></h1>
+
+        </div>
+        <!-- <div class="bg"><img src="img/sc2.png"></div>-->
+    </div>
+
+    <!-- 第三页 -->
+    <div class="section s3">
+        <div class="left">
+            <ul class="grid">
+                <li class="cs-style-3">
+                    <figure>
+                        <div><img src="img/6.png" alt="img05"></div>
+                        <figcaption>
+                            <h3>PC端</h3>
+                            <span>原生js demo</span>
+                            <a href="ifram.html" target="_blank">点我查看</a>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="cs-style-4">
+                    <figure>
+                        <div><img src="img/4.png" alt="img04"></div>
+                        <figcaption>
+                            <h3>移动端</h3>
+                            <span>全兼容布局</span>
+                            <a href="price.html" target="_blank">点我查看</a>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="cs-style-5">
+                    <figure>
+                        <div><img src="img/1.png" alt="img01"></div>
+                        <figcaption>
+                            <h3>后台交互</h3>
+                            <span>ajax/angular</span>
+                            <a href="buy.html" target="_blank">点我查看</a>
+                        </figcaption>
+                    </figure>
+            </ul>
+        </div>
+        <div class="right">
+            <h1>我</br>的</br>作</br>品</br></h1>
+
+        </div>
+        <!-- <div class="bg"><img src="img/sc3.png"></div>-->
+    </div>
+
+    <!-- 第四页 -->
+    <div class="section s4">
+        <section id="cd-timeline" class="cd-container">
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="img/cd-icon-picture.svg" alt="Picture">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>平安科技</h2>
+                    <p>
+                        2014年底至2016年7月，就职于平安科技，工作期间，主要负责公司平安普惠项目对外网站和内部业务系统的前端工作，
+                        期间主要使用公司内部框架开发。因为个人原因，在平安普惠工作一年左右后离职。
+                    </p>
+                    <span class="cd-date">2014年10-2016年4月</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-movie">
+                    <img src="img/cd-icon-movie.svg" alt="Movie">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>恒宇投资</h2>
+                    <p>期间任职于财务部门，负责会计助理职务。
+                       对已审核的原始凭证及时填制记帐。
+                       	申请票据，购买发票，准备和报送会计报表，协助办理税务报表的申报；工作之余学习前端知识
+
+
+                    </p>
+                    <span class="cd-date">2013年4月-2014年10月</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="img/cd-icon-picture.svg" alt="Picture">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>昆明新时代财务公司</h2>
+                    <p>这段期间主要跟财务相关工作</p>
+                    <span class="cd-date">2013年</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+
+
+
+        </section> <!-- cd-timeline -->
+
+
+
+
+
+
+        <div class="right">
+            <h1>工</br>作</br>经</br>历</br></h1>
+
+        </div>
+        <!--   <div class="bg"><img src="img/sc4.png"></div>-->
+    </div>
+
+    <!-- 第五页 -->
+    <div class="section s5">
+        <div class="left">
+            <ul>
+                <li>
+                   
+                </li>
+
+            </ul>
+        </div>
+        <div class="s5-text" >感谢您花时间阅读我的简历，期待能有机会和您共事</div>
+        <div class="right">
+            <h1>联</br>系</br>我</br>吧</br></h1>
+
+        </div>
+        <!--   <div class="bg"><img src="img/sc5.png"></div>-->
+    </div>
+</div>
+<!-- 主体结束 -->
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $(function(){
+        $('.con').fullpage({
+            navigation: true,
+            anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+            menu: '.menu',
+            navigationTooltips: ['首页','专业技能','我的作品','个人经历','联系我吧',],
+            verticalCentered:false,
+
+        });
+
+    });
+</script>
+</body>
+</html>

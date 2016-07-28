@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+    <style>
+        *{ margin:0; padding:0; list-style:none;}
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oTa1=document.getElementById('ta1');
+            var oTa2=document.getElementById('ta2');
+            var oBtn=document.getElementById('btn1');
+            oBtn.onclick=function(){
+                var str=oTa1.value;
+
+                //先将字符串 string  ----->  array ----->   json
+                var arr=str.split(' ');
+                var json={};
+                for(var i=0;i<arr.length;i++){
+                    var key=arr[i];
+
+                    if(json[key]){      //如果key存在，取出来+1
+                        json[key]++;
+                    }else {
+                        json[key]=1     //如果不存在，发明一个key，赋值1
+                    }
+                }
+
+                //json  -->arr  ---->json
+                var arr2=[];
+                for(var key in json){
+                    arr2.push({name:key,count:json[key]})
+                }
+
+                arr2.sort(function(j1,j2){
+                    return j2.count-j1.count
+                })
+
+
+                var s = '';
+                for (var i = 0; i < arr2.length; i++) {
+
+                    s += arr2[i].name+arr2[i].count+'\n';
+                }
+                oTa2.value=s;
+            };
+        };
+    </script>
+</head>
+<body>
+<textarea id="ta1" style="width:300px;height:200px;">冰红茶-3元， 冰绿茶-2.5元， 橙汁-1.5元， 葡萄汁-5毛， 柠檬汁-1.5元， 芒果汁-30毛， 柠檬汁-1.5元， 柠檬汁-1.5元， 柠檬汁-1.5元， 柠檬汁-1.5元</textarea>
+<input type="button" value="变" id="btn1">
+<textarea id="ta2" style="width:300px;height:200px;"></textarea>
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>盒子的碰撞以及拖拽</title>
+<style>
+*{ margin:0; padding:0; list-style:none; font-family: "微软雅黑","张海山锐线体简"}
+.box{width:100px;height:100px;background:red;position: absolute;left:0;top:0; border-radius:50%; line-height:100px; text-align:center;}
+
+</style>
+<script>
+var arr=['1号盒子','2号盒子','3号盒子','4号盒子','我是张冬冬'];
+window.onload=function(){
+	
+	//1.在5秒内，随机出现5个盒子
+	for(var i=0;i<1000;i++){
+		setTimeout(createBox,Math.random()*30000*60);
+	}	
+};
+function createBox(){
+	var oBox=document.createElement('div');
+	oBox.className='box';
+	var r=rnd(0,256);
+	var g=rnd(0,256);
+	var b=rnd(0,256);
+	oBox.style.background='rgb('+r+','+g+','+b+')';
+	
+	oBox.innerHTML=arr[rnd(0,5)];
+	document.body.appendChild(oBox);
+	
+	
+	var speedX=rnd(1,30);
+	var speedY=rnd(1,30);
+	move(oBox,speedX,speedY);
+	drag(oBox);	
+}
+function rnd(n,m){return parseInt(n+Math.random()*(m-n))}
+function drag(oDiv){
+	oDiv.onmousedown=function(ev){
+		clearInterval(oDiv.timer);
+		var lastX=0,lastY=0;
+		var speedX=0,speedY=0;
+		
+		var e=ev||event;
+		var disX=e.clientX-oDiv.offsetLeft;
+		var disY=e.clientY-oDiv.offsetTop;
+		document.onmousemove=function(ev){
+			var e=ev||event;
+			
+			//记录新绿点,做新老替换
+			lastX=oDiv.offsetLeft;
+			lastY=oDiv.offsetTop;
+			
+			oDiv.style.left=e.clientX-disX+'px';
+			oDiv.style.top=e.clientY-disY+'px';	
+			
+			
+		};
+		document.onmouseup=function(){
+			document.onmousemove=document.onmouseup=null;	
+			
+			//取新green点		==	oDiv.offsetLeft/top
+			speedX=oDiv.offsetLeft-lastX;
+			speedY=oDiv.offsetTop-lastY;
+			
+			move(oDiv,speedX,speedY);
+		};
+		return false;
+	};
+};
+
+function move(obj,speedX,speedY){
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		
+		speedY+=3;//重力加速度
+		
+		var l=obj.offsetLeft+speedX;//计算
+		var t=obj.offsetTop+speedY;
+		//碰撞--反向+摩擦
+		if(t>document.documentElement.clientHeight-obj.offsetHeight){
+			t=document.documentElement.clientHeight-obj.offsetHeight;
+			speedY*=-0.8;//反向+摩擦
+			speedX*=0.8	//x+摩擦
+		}else if(t<0){
+			t=0	//限定，不超出去 
+			speedY*=-0.8;//反向+摩擦
+			speedX*=0.8	//x+摩擦
+		}
+		if(l>document.documentElement.clientWidth-obj.offsetWidth){
+			l=document.documentElement.clientWidth-obj.offsetWidth;
+			speedX*=-0.8;//反向+摩擦
+			speedY*=0.8	//x+摩擦
+		}else if(l<0){
+			l=0	//限定，不超出去 
+			speedX*=-0.8;//反向+摩擦
+			speedY*=0.8	//x+摩擦
+		}		
+		
+		obj.style.left=l+'px';
+		obj.style.top=t+'px';
+		
+		if(Math.abs(speedX)<1) speedX=0;
+		if(Math.abs(speedY)<1) speedY=0;
+		console.log(speedX,speedY);
+		if(speedX==0 && speedY==0 && t==document.documentElement.clientHeight-obj.offsetHeight){
+			clearInterval(obj.timer);	
+			console.log(speedX,speedY);
+			document.body.removeChild(obj);
+		}
+		
+		
+	},30);
+}
+</script>
+</head>
+
+<body>
+
+
+</body>
+</html>

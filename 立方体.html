@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding:0;list-style: none}
+        ul{width:300px;height: 300px;border: 1px solid red;position: relative;
+            margin: 200px auto;
+        -webkit-transform-style:preserve-3d ;
+        -webkit-transform: perspective(800px) rotateY(0deg) rotateX(0deg) ;
+            -webkit-transition:3s all ease;
+        }
+        ul li{width: 100%;height:100%;position: absolute;
+            top: 0;
+            left:0;
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+        }
+        .b{background:red;opacity: 0.7;-webkit-transform:translateZ(-150px) }
+        .l{background: palegreen;opacity: 0.7;-webkit-transform:translate(-150px,0) rotate(-90deg)}
+        .r{background:gold;opacity: 0.7;-webkit-transform:translate(150px,0) rotateY(90deg)}
+        .t{background: blueviolet;opacity: 0.7;-webkit-transform: translate(0,150px) rotateX(90deg)}
+        .btn{background:deeppink;opacity: 0.7;-webkit-transform: translate(0,-150px) rotateX(90deg)}
+        .f{background:deepskyblue;opacity: 0.7;-webkit-transform:translateZ(150px) }
+        ul:active{ -webkit-transform:perspective(800px)rotateY(360deg) rotateX(360deg);}
+    </style>
+</head>
+<body>
+<ul>
+    <li class="f">1</li>
+    <li class="b">2</li>
+    <li class="l">3</li>
+    <li class="r">4</li>
+    <li class="t">5</li>
+    <li class="btn">6</li>
+</ul>
+</body>
+</html>

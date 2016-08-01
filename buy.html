@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 
 <title>建议购物车</title>
-<style>
-</style>
-<script src="angular.js"></script>
+<script src="js/angular.js"></script>
 <script>
 var app = angular.module("index",[]);
 app.controller("shopingCtrl",function($scope){
@@ -40,7 +38,7 @@ app.controller("shopingCtrl",function($scope){
         <dd>总价{{item.price*item.count}}</dd>
     </dl>
     
-    <div>￥{{sum()}}</div>
+    <div>总价为￥{{sum()}}</div>
   
 </body>
 </html>

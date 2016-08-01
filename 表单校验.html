@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单验证</title>
+<style>
+*{ margin:0; padding:0; list-style:none; font-family: "微软雅黑",}
+input{border:#999 solid 1px;}
+.ok{border:#0C3 solid 1px;}
+.error{border:#f00 solid 1px;}
+</style>
+<script src="表单验证.js"></script>
+<script>
+window.onload=function(){
+	checkForm('fm',function(oPass2){
+		var oPass1 = document.getElementsByName('pass1')[0];
+		if(oPass1.value!=oPass2.value){
+			return false;	
+		}
+	});	
+};
+
+</script>
+</head>
+
+<body>
+
+<form action="xxx.php" id="fm">
+	邮  箱:<input type="text" name="mail" value="alex@qq.com"><br>
+    	座机号:<input type="text" name="tel" value="021-87654321"><br>
+    年纪:<input type="text" name="age" value="18"><br>
+    用户名:<input type="text" name="user" value=""><br>
+    密码:<input type="text" name="pass1" value=""><br>
+    确认:<input type="text" name="pass2" value=""><br>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

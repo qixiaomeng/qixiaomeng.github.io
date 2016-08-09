@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <style>
+        h1{
+            margin:0;
+            padding-top:18px;
+            border-bottom: 1px solid;
+        }
+        .box{
+            width:300px;
+            height:400px;
+            border:1px solid;
+            margin:0 auto;
+        }
+        .ans{
+            border-bottom:1px solid;
+        }
+        .ans div{
+            width:300px;
+            height:25px;
+            text-align: right;
+        }
+        .box_left{
+            padding:0;
+            width:200px;
+            float: left;
+        }
+        .box_left li{
+            margin:5px;
+            list-style: none;
+            width:45px;
+            height:55px;
+            background: #CCCCCC;
+            float: left;
+            text-align: center;
+            line-height: 55px;
+        }
+        .box_left li:nth-child(10){
+            width:100px;
+        }
+        .box_right{
+            width:110px;
+            float: left;
+            margin-left: -50px;
+        }
+        .box_right li{
+            margin:5px;
+            list-style: none;
+            width:45px;
+            height:55px;
+            float: left;
+            background: #CCCCCC;
+            text-align: center;
+            line-height: 55px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var aLi=document.querySelectorAll(".box_left li");
+            var oAns=document.querySelector(".ans").children[0];
+            var oResult=document.querySelector(".ans").children[1];
+            var arr=["0","1","2","3","4","5","6","7","8","9"];
+		//随机排序
+            arr.sort(function(n1,n2){return Math.random()-0.5});
+             for(var i=0;i<aLi.length-1;i++){
+                 aLi[i].innerHTML=arr[i];
+             }
+            var allLi=document.querySelectorAll("li");
+            for(var i=0;i<allLi.length-1;i++){
+                (function(index){
+                    allLi[i].onclick=function(){
+                        if(allLi[index].innerHTML!="del"&&allLi[index].innerHTML!="C"){
+                            oAns.innerHTML+=allLi[index].innerHTML;
+                        }
+                        if(allLi[index].innerHTML=="C"){
+				//清空
+                             oAns.innerHTML="";
+                            oResult.innerHTML="";
+                        }
+                        if(allLi[index].innerHTML=="del"){
+				//提取字符串中介于两个指定下标之间的字符
+                            oAns.innerHTML=oAns.innerHTML.substring(0,oAns.innerHTML.length-1);
+                        }
+                    };
+                })(i);
+            }
+
+            allLi[allLi.length-1].onclick=function(){
+                var rel=oAns.innerHTML;
+                for(var i=0;i<oAns.innerHTML.length;i++){
+                    if(oAns.innerHTML[i]=="×"){
+                        rel=oAns.innerHTML.replace("×","*");
+                    }
+                    if(oAns.innerHTML[i]=="÷"){
+                          rel=rel.replace("÷","/");
+                    }
+                }
+		//计算  第二行
+                 oResult.innerHTML=eval("("+rel+")")
+            }
+
+        };
+    </script>
+</head>
+<body>
+
+<div class="box">
+
+<h1>计算器</h1>
+    <div class="ans">
+        <div></div>
+        <div></div>
+    </div>
+    <ul class="box_left">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li>.</li>
+    </ul>
+    <ul class="box_right">
+        <li>del</li>
+        <li>C</li>
+        <li>+</li>
+        <li>-</li>
+        <li>×</li>
+        <li>÷</li>
+        <li>%</li>
+        <li>=</li>
+    </ul>
+
+</div>
+</body>
+</html>

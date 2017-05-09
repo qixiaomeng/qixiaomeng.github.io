@@ -90,7 +90,7 @@
             <p>好吧，<em>其实</em>只是想换个方式跟你发消息而已啦,</p>
             <p>今天你就要来上海了，好激动</p>
             <p>哦多尅!</p>
-            <p>肯定是客户可适当快速的好几个</p>
+            <p>接下来有一道选择题给你</p>
             <p>好了，正文开始...</p>
         </div>
         <span id="typed" style="white-space:pre-wrap;"></span>
@@ -137,15 +137,17 @@
     $(document.body).on('click', '.submit', function() {
         var aa=$("input[type='radio']:checked").val();
 
-        if(a==4){
+        if(aa==4){
             layer.open({
                 content: '必须选'
                 ,btn: '好的'
             });
         }else {
+            
+         
             layer.open({
-                content: '亲，你确定选好了么？'
-                ,btn: '是的'
+                content: '亲，你确定选'+aa+'了么？'
+                ,btn: ['是的', '再想想']
             });
 
         }

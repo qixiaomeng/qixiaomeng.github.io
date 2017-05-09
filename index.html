@@ -73,17 +73,17 @@
         <form action="" class="myform">
 
             <lable class="lab">
-                <i class='input_style radio_bg'><input type="radio" name="hot" value="1" checked></i>
+                <i class='input_style radio_bg'><input type="radio" name="hot" value="上海" checked></i>
                 就上海喽
             </lable>
 
             <lable class="lab">
-                <i class='input_style radio_bg'><input type="radio" name="hot" value="2"></i>
+                <i class='input_style radio_bg'><input type="radio" name="hot" value="上海周边"></i>
                 最好上海周边
             </lable>
 
             <lable class="lab">
-                <i class='input_style radio_bg'><input type="radio" name="hot" value="3"></i>
+                <i class='input_style radio_bg'><input type="radio" name="hot" value="听你的"></i>
                 听冬冬的，嘻嘻嘻
             </lable>
 
@@ -148,7 +148,7 @@
         }else {
             layer.open({
                 content: '亲，你确定选好'+aa+'么？'
-                ,btn: ['刷新', '不要']
+                ,btn: ['是的', '不要']
                 ,yes: function(index){
                     location.reload();
                     layer.close(index);

@@ -5,36 +5,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>Typed.js - Type your heart out</title>
     <script src="js/typed.min.js" type="text/javascript"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function(){
-
-            Typed.new("#typed", {
-                strings: ["First sentence.", "Second sentence."],
-                stringsElement: document.getElementById('typed-strings'),
-                typeSpeed: 120,
-                backDelay: 500,
-                loop: false,
-                contentType: 'html', // or text
-                // defaults to null for infinite loop
-                loopCount: null,
-                callback: function(){ foo(); },
-                resetCallback: function() { newTyped(); }
-            });
-
-            var resetElement = document.querySelector('.reset');
-            if(resetElement) {
-                resetElement.addEventListener('click', function() {
-                    document.getElementById('typed')._typed.reset();
-                });
-            }
-
-        });
-
-        function newTyped(){ /* A new typed object */ }
-
-        function foo(){ console.log("Callback"); }
-
-    </script>
     <link href="css3/main.css" rel="stylesheet"/>
     <link rel='stylesheet'  href="css3/input.css">
     <style>
@@ -77,7 +47,7 @@
         }
     </style>
     <link rel="stylesheet" href="css3/animate.min.css">
-    <link rel="stylesheet " href="css3/layer.css">
+ 
 </head>
 <body>
 
@@ -134,6 +104,39 @@
 <script text="type/javascript" src="js/input.js"></script>
 <script src="js/layer.js"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        Typed.new("#typed", {
+            strings: ["First sentence.", "Second sentence."],
+            stringsElement: document.getElementById('typed-strings'),
+            typeSpeed: 160,
+            backDelay: 500,
+            loop: false,
+            contentType: 'html', // or text
+            // defaults to null for infinite loop
+            loopCount: null,
+            callback: function(){ foo(); },
+            resetCallback: function() { newTyped(); }
+        });
+
+        var resetElement = document.querySelector('.reset');
+        if(resetElement) {
+            resetElement.addEventListener('click', function() {
+                document.getElementById('typed')._typed.reset();
+            });
+        }
+
+    });
+
+    function newTyped(){ /* A new typed object */ }
+    function foo(){
+        console.log("Callback");
+        $('.wrap2').show().addClass("animated fadeInLeft")
+
+    }
+
+
+
+
     $(document.body).on('click', '.submit', function() {
         var aa=$("input[type='radio']:checked").val();
 
@@ -143,17 +146,18 @@
                 ,btn: '好的'
             });
         }else {
-            
-         
             layer.open({
-                content: '亲，你确定选'+aa+'了么？'
-                ,btn: ['是的', '再想想']
+                content: '亲，你确定选好'+aa+'么？'
+                ,btn: ['刷新', '不要']
+                ,yes: function(index){
+                    location.reload();
+                    layer.close(index);
+                }
             });
 
         }
 
     });
-
 </script>
 </body>
 </html>

@@ -83,7 +83,7 @@
             </lable>
 
             <lable class="lab">
-                <i class='input_style radio_bg'><input type="radio" name="hot" value="听你的"></i>
+                <i class='input_style radio_bg'><input type="radio" name="hot" value="听我的"></i>
                 听冬冬的，嘻嘻嘻
             </lable>
 
@@ -148,9 +148,8 @@
         }else {
             layer.open({
                 content: '亲，你确定选好'+aa+'么？'
-                ,btn: ['是的', '不要']
+                ,btn: ['是的', '再想想']
                 ,yes: function(index){
-                    location.reload();
                     layer.close(index);
                 }
             });

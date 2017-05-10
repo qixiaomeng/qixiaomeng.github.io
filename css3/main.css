@@ -83,13 +83,13 @@ p{
 	text-align: center;
 }
 
-.wrap2{
-	width: 500px;
+.wrap2{width: 500px;
 	margin-top: 20px;
-	border: 1px dashed #ea6f5a;
 	padding: 10px;
-	font-size: 18px;
-
+	border-radius: 4px;
+	font-size: 15px;
+	color: #fff;
+	background-color:#ea6f5a;
 	display: none;
 }
 

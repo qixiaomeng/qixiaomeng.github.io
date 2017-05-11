@@ -61,83 +61,10 @@
 <body>
 
 <div class="wrap">
-    <h1 class="h1">To:</h1>
-    <div class="type-wrap">
-        <div id="typed-strings">
-            <span>上次写的我都 <strong>删除</strong> 啦</span>
-            <p>这次就几个字了哈哈</p>
-             <p>我有一个理想，那就是.^1000.^1000.^1000</p>
-            <!-- <p>哦多尅!</p>
-             <p>好了，正文开始...</p>-->
-        </div>
-        <span id="typed" style="white-space:pre-wrap;"></span>
-        <span  id="story1" style="white-space:pre-wrap;"></span>
-    </div>
-
-    <div class="wrap2">
-        <div>喂：你有女朋友啦</div>
-    </div>
-
-    <div class="links">
-        此版权归张冬冬所有，哈哈
-    </div>
-    <div class="links">
-        也可以看看<a href='333.html'> 我的简历 </a>哦
-    </div>
+   
  <div class="links">
-        也可以看看<a href='zl.html'> 其它的 </a>哦
+       此处空白哦，哈哈哈
     </div>
 </div>
-<script text="type/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script text="type/javascript" src="js/input.js"></script>
-<script src="js/layer.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-        Typed.new("#typed", {
-            strings: ["First sentence.", "Second sentence."],
-            stringsElement: document.getElementById('typed-strings'),
-            typeSpeed:100,
-            backDelay: 500,
-            loop: false,
-            contentType: 'html', // or text
-            // defaults to null for infinite loop
-            loopCount: false,
-            callback: function(){
-                foo();
-                Typed.new("#story1", {
-                    strings: ["找漂亮妹子,^1500额...", "事业和爱情.^1500\n我爱写程序.^1500\n我爱吃红烧鱼.^1500\n我爱做很Cool的东西.^1500\n谢谢..."],
-                    typeSpeed: 100,
-                    backDelay: 500,
-                    loop: false,
-                    loopCount: false,
-                    preStringTyped: function() {
-
-                    },
-                    onStringTyped: function() {
-                        $('.wrap2').fadeOut();
-                    },
-                    callback: function(){
-                        $('.type-wrap').addClass("box-show")
-                    }
-
-                });
-            },
-            resetCallback: function() { newTyped(); }
-        });
-        var resetElement = document.querySelector('.reset');
-        if(resetElement) {
-            resetElement.addEventListener('click', function() {
-                document.getElementById('typed')._typed.reset();
-            });
-        }
-    });
-    function newTyped(){ /* A new typed object */ }
-    function foo(){
-        $('.typed-cursor').addClass('typed-fade-out');
-        $('.wrap2').delay("2000").show().addClass("animated zoomIn")
-    }
-
-
-</script>
 </body>
 </html>

@@ -23,7 +23,8 @@ var $nav = $('.nav'),
 
 	$navBtn.on('click', function() {
 		$nav.addClass( "js-nav--open" );
-
+		$('.nextPage').hide();
+		$(".tooltip-content").css('opacity',0)	
 		// toggle animations
 		if(!isNavOpen) {
 			openNav();
@@ -176,7 +177,8 @@ var $nav = $('.nav'),
 		destroyAnimation(navOpenTL); // destroy opening animations in case clicking too quickly
 
 		isNavOpen = false;
-
+		// $(".b-confirm").hide();
+		$("#myCanvans").show();
 		hideLogo();
 		stopGradient();
 		navBtnClosedOver();

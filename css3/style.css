@@ -145,6 +145,7 @@ body {
   appearance: none;
   outline: 0;
   cursor: pointer;
+  opacity: 0;
 }
 
 .burger {
@@ -486,7 +487,8 @@ main {
 }
 .grid__item{
   display: inline-block;
-  font-size: 24px;
+  font-size: 30px;
+  vertical-align: top;
 }
 
 .particles-button:focus {
@@ -514,13 +516,13 @@ main {
 	--color-button-text: #3c2e9e;
 	--button-padding: 2.5rem 6rem;
 	--radius-button: 5px;
-	--border-button: 0;
+  --border-button: 0;
 }
 
 .theme-3 {
 	--color-item-bg: linear-gradient(120deg,#152bc3,#5366d8);
     --color-action: #0e19a2;
-    --color-button-bg: #0e19a2;
+    --color-button-bg: #a20e58;
     --color-button-text: #fff;
     --button-padding: 2rem 4rem;
     --radius-button: 0;
@@ -618,3 +620,48 @@ main {
 }
 
 
+#yesHa{
+  position: relative;
+  margin-left: 30px;
+  display: inline-block;
+  font-size: 30px;
+}
+#yesHa button{
+  background: #e05a32;
+  padding: 2.5rem 6rem;
+  border: 0;
+  color: #fff;
+}
+
+.nextPage{
+  font-size: 26px;
+  color: #fff;
+}
+
+.b-times{
+  font-size: 40px;
+  line-height: 1.5;
+  color: #fff;
+  font-weight: 600;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.b-confirm{
+  padding: 30px 20px;
+  border: 1px dashed rgb(235, 54, 196);
+  display: none;
+}
+.b-btn{
+  display: none;
+}
+.w-tips{
+  color: rgba(199, 24, 97, 0.63);
+  font-size: 26px;
+}
+#myCanvans {
+	position: absolute;
+	top: 0;
+  left: 0;
+  display: none;
+}

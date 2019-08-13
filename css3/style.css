@@ -182,6 +182,7 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
+  background: #eb95fb;
 }
 
 .nav__logo-link {

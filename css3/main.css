@@ -34,7 +34,7 @@ body {
 }
 
 .wrap h1 {
-  color: #d265b4a3 !important;
+  color: #333 !important;
   font-size: 40px;
 }
 a {
@@ -55,8 +55,9 @@ a {
 .type-wrap {
   margin: 10px auto;
   padding: 0 25px;
-  font-size: 34px;
+  font-size: 36px;
   height: 650px;
+  color:#444;
 }
 /* 
 #typed-strings {

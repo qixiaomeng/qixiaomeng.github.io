@@ -134,7 +134,7 @@ body {
 .nav-btn {
   position: fixed;
   z-index: 101;
-  bottom: 20%;
+  bottom: 15%;
   right: 50%;
   width: 36px;
   height: 36px;
@@ -483,7 +483,8 @@ main {
 	border: 0;
 	border: var(--border-button);
   margin: 0;
-	padding: var(--button-padding);
+  padding: var(--button-padding);
+  border-radius: 10px;
 }
 .grid__item{
   display: inline-block;
@@ -514,7 +515,7 @@ main {
     --color-action: #f3f3f3;
     --color-button-bg: #f3f3f3;
 	--color-button-text: #3c2e9e;
-	--button-padding: 2.5rem 6rem;
+	--button-padding: 2rem 1rem;
 	--radius-button: 5px;
   --border-button: 0;
 }
@@ -622,15 +623,16 @@ main {
 
 #yesHa{
   position: relative;
-  margin-left: 30px;
   display: inline-block;
   font-size: 30px;
 }
 #yesHa button{
   background: #e05a32;
-  padding: 2.5rem 6rem;
+  padding: 2rem 1rem;
   border: 0;
   color: #fff;
+  border-radius: 10px;
+  margin-left: 8px;
 }
 
 .nextPage{
@@ -645,10 +647,11 @@ main {
   font-weight: 600;
   padding: 50px 0;
   text-align: center;
+  margin-bottom: 160px;
 }
 
 .b-confirm{
-  padding: 30px 20px;
+  padding: 30px 10px;
   border: 1px dashed rgb(235, 54, 196);
   display: none;
 }

@@ -1,0 +1,43 @@
+*{  
+    margin:0;
+    font-size:0;
+}
+.headline{
+    position: absolute;
+    left:15px;
+    top:15px;
+    background-color: red;
+    height: 50px;
+    width: 150px;
+    border:1px solid red ;
+     border-radius:15px;
+}
+
+.theme{
+   float:left;
+    font-size: 20px; 
+    width:200px;
+    height:80px;
+    margin:10px;  
+}
+.B_box{
+    margin-top:100px;
+    float:left;
+}
+.F_box{
+    list-style: none;
+    margin-top:10px;
+
+}
+  
+.F_box li{
+    float:left;
+    display:block;
+    margin:2px;
+     list-style:none;
+     border :2px solid red;
+     border-radius:3px;
+}
+
+
+
